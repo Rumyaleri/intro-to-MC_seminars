@@ -28,17 +28,14 @@ double[] ColumnsAverage(int[,] matr)
     int rows = matr.GetLength(0);
         for (int j = 0, n = 0; (j < matr.GetLength(1) && n < matr.GetLength(1)); j++, n++)
         {
-
             double sum = 0;
             double avgSum = 0;
             for (int i = 0; i < matr.GetLength(0); i++)
             {                
                 sum += matr[i, j];
                 avgSum = Math.Round((sum / rows), 2);
-                
             }  
              newArrayDouble[n] = avgSum;
-             
         } 
             return newArrayDouble;
 }    
