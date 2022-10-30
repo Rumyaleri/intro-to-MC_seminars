@@ -25,7 +25,6 @@ double[] ColumnsAverage(int[,] matr)
 {
     int size = matr.GetLength(1);
     var newArrayDouble = new double[size];
-    int rows = matr.GetLength(0);
         for (int j = 0, n = 0; (j < matr.GetLength(1) && n < matr.GetLength(1)); j++, n++)
         {
             double sum = 0;
@@ -33,7 +32,7 @@ double[] ColumnsAverage(int[,] matr)
             for (int i = 0; i < matr.GetLength(0); i++)
             {                
                 sum += matr[i, j];
-                avgSum = Math.Round((sum / rows), 2);
+                avgSum = Math.Round((sum / matr.GetLength(0)), 2);
             }  
              newArrayDouble[n] = avgSum;
         } 
@@ -58,14 +57,14 @@ void PrintArray(double[] array)
     Console.Write("[");
     for (int n = 0; n < array.Length; n++)
     {
-        if (n < array.Length - 1) Console.Write($"{array[n]}, ");
-        else Console.Write($"{array[n]}");
+        if (n < array.Length - 1) Console.Write($"{array[n], 4}, ");
+        else Console.Write($"{array[n], 4}");
     }
     Console.WriteLine("]");
 }
 
 
-int[,] array2D = CreateMatrixRndInt(5, 9, 1, 10);
+int[,] array2D = CreateMatrixRndInt(2, 9, 1, 10);
 PrintMatrix(array2D);
 double[] array1D = ColumnsAverage(array2D);
 PrintArray(array1D);
