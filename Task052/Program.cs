@@ -21,42 +21,25 @@ int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
     return matrix;
 }
 
-// double ColumnsAverage(int[,] matr)
-// {
-//        double sum = 0;
-//        double avgSum = 0;
-//         for (int i = 0; i < matr.GetLength(0); i++)
-//         {
-
-//             int j=0;
-//                 sum += matr[i, j];
-//                 avgSum = Math.Round((sum / matr.GetLength(0)), 1);
-//             }
-//             return avgSum;
-// }
-
 double[] ColumnsAverage(int[,] matr)
 {
-    // double avgSum = 0;
     int size = matr.GetLength(1);
     var newArrayDouble = new double[size];
-    // for (int n = 0; n < size; n++)
-    // {
-        for (int j = 0; j < matr.GetLength(1); j++)
+    int rows = matr.GetLength(0);
+        for (int j = 0, n = 0; (j < matr.GetLength(1) && n < matr.GetLength(1)); j++, n++)
         {
+
             double sum = 0;
             double avgSum = 0;
-            for (int n = 0; n < size; n++)
-            {
             for (int i = 0; i < matr.GetLength(0); i++)
             {                
                 sum += matr[i, j];
-                avgSum = sum / matr.GetLength(0);
+                avgSum = Math.Round((sum / rows), 2);
+                
             }  
              newArrayDouble[n] = avgSum;
-            } 
+             
         } 
-    //  } 
             return newArrayDouble;
 }    
 
@@ -85,9 +68,7 @@ void PrintArray(double[] array)
 }
 
 
-int[,] array2D = CreateMatrixRndInt(3, 4, 1, 10);
+int[,] array2D = CreateMatrixRndInt(5, 9, 1, 10);
 PrintMatrix(array2D);
 double[] array1D = ColumnsAverage(array2D);
-// double avgSum = ColumnsAverage(array2D);
-// Console.WriteLine(avgSum);
 PrintArray(array1D);
