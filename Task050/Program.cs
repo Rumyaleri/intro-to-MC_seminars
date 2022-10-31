@@ -26,25 +26,27 @@ void PrintMatrix(int[,] matrix)
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
-         Console.Write("|");
+        Console.Write("|");
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            if (j < matrix.GetLength(1) - 1) Console.Write($"{matrix[i,j], 3}, ");
-        else Console.Write($"{matrix[i,j], 3}");
+            if (j < matrix.GetLength(1) - 1) Console.Write($"{matrix[i, j],3}, ");
+            else Console.Write($"{matrix[i, j],3}");
         }
-           Console.WriteLine("|");
+        Console.WriteLine("|");
     }
 }
 
-void FindMatrixElem(int [,] matr)
+void FindMatrixElem(int[,] matr)
 {
-Console.Write("Введите индекс строки: ");
-int i = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите индекс столбика: ");
-int j = Convert.ToInt32(Console.ReadLine());
-if (i >= matr.GetLength(0) || j >= matr.GetLength(1))
-Console.WriteLine("Такого элемента в массиве нет");
-else Console.WriteLine(matr[i, j]);
+    Console.Write("Введите индекс строки: ");
+    int i = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Введите индекс столбика: ");
+    int j = Convert.ToInt32(Console.ReadLine());
+    if (i >= matr.GetLength(0) && i < 0 || j >= matr.GetLength(1) && j < 0)
+        Console.WriteLine("Такого элемента в массиве нет");
+    else if (i < 0 || j < 0)
+        Console.WriteLine("Введено некорректное значение");
+    else Console.WriteLine(matr[i, j]);
 }
 
 int[,] array2D = CreateMatrixRndInt(4, 10, -10, 10);
