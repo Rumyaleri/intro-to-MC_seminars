@@ -31,7 +31,7 @@ void RowSortMatrix(int[,] matr)
         {
             for (int k = 0; k < matr.GetLength(1); k++)
             {
-                if (matr[i, j] < matr[i, k])
+                if (matr[i, j] > matr[i, k])
                 {
                     var temp = matr[i, j];
                     matr[i, j] = matr[i, k];

@@ -51,7 +51,7 @@ void MinElemIndex(int[] list)
     }
     for (int i = 0; i < list.Length; i++)
     {
-        if (min == list[i]) minRow = i+1;
+        if (min == list[i]) minRow = i+1; 
     }
     Console.WriteLine($"Строка под номером {minRow} содержит минимальную сумму элементов");
 }
@@ -81,7 +81,7 @@ void PrintArray(int[] array)
 }
 
 
-int[,] array2D = CreateMatrixRndInt(5, 10, 1, 3);
+int[,] array2D = CreateMatrixRndInt(5, 10, 1, 10);
 PrintMatrix(array2D);
 
 int[] array1D = SunOfRowElem(array2D);
