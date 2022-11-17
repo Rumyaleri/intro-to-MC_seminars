@@ -4,9 +4,9 @@
 // M = 4; N = 8 -> "4, 6, 7, 8"
 
 Console.WriteLine("Введите целое число N:");
-int number = Convert.ToInt32(Console.ReadLine());
+int number1 = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите целое число M:");
-int number = Convert.ToInt32(Console.ReadLine());
+int number2 = Convert.ToInt32(Console.ReadLine());
 
 void NaturalNumbers(int num1, int num2)
 {
@@ -28,4 +28,4 @@ void NaturalNumbers(int num1, int num2)
 
 }
 
-NaturalNumbers(num1, num2);
+NaturalNumbers(number1, number2);
